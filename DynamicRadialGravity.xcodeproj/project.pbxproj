@@ -15,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		031FE8E21EAFBD2200A6B742 /* Dynamic Gravity.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Dynamic Gravity.playground"; sourceTree = "<group>"; };
 		03BA99091EAC2D6F00754F09 /* DynamicRadialGravity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicRadialGravity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03BA990C1EAC2D6F00754F09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03BA990E1EAC2D6F00754F09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 			children = (
 				03BA990C1EAC2D6F00754F09 /* AppDelegate.swift */,
 				03BA990E1EAC2D6F00754F09 /* ViewController.swift */,
+				031FE8E21EAFBD2200A6B742 /* Dynamic Gravity.playground */,
 				03BA99101EAC2D6F00754F09 /* Main.storyboard */,
 				03BA99131EAC2D6F00754F09 /* Assets.xcassets */,
 				03BA99151EAC2D6F00754F09 /* LaunchScreen.storyboard */,
@@ -304,6 +306,7 @@
 				03BA991D1EAC2D6F00754F09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

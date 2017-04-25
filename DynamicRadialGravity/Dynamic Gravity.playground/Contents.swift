@@ -1,12 +1,7 @@
-//
-//  ViewController.swift
-//  DynamicRadialGravity
-//
-//  Created by Joshua Homann on 4/22/17.
-//  Copyright © 2017 josh. All rights reserved.
-//
+//: Playground - noun: a place where people can play
 
 import UIKit
+import PlaygroundSupport
 
 class ViewController: UIViewController {
     // MARK: IBOutlet
@@ -92,9 +87,14 @@ class ViewController: UIViewController {
         default:
             break
         }
-
+        
     }
     // MARK: IBAction
 }
+
+let viewController = ViewController()
+PlaygroundPage.current.liveView = viewController
+PlaygroundPage.current.needsIndefiniteExecution = true
+
 
 
