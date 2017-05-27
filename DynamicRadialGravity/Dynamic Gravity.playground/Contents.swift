@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     let minimumRadius: CGFloat = 60
     let radius: CGFloat = 600
     let strength: CGFloat = 600
-    let fallOff: CGFloat = 0.5
-    let damping: CGFloat = 15
+    let fallOff: CGFloat = 0.25
+    let damping: CGFloat = 50
     // MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()

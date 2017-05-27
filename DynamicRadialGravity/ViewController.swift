@@ -13,15 +13,17 @@ class ViewController: UIViewController {
 
     // MARK: Variables
     var animator: UIDynamicAnimator!
+    var collision =  UICollisionBehavior()
     var gravity: UIFieldBehavior?
+    var downGravity = UIGravityBehavior()
     var views: [UIView] = []
     // MARK: Constants
     let columns = 16
     let rows = 24
     let diameter: CGFloat = 16
     let minimumRadius: CGFloat = 60
-    let radius: CGFloat = 600
-    let strength: CGFloat = 600
+    let radius: CGFloat = 60
+    let strength: CGFloat = 60
     let fallOff: CGFloat = 0.5
     let damping: CGFloat = 15
     // MARK: UIViewController
@@ -63,10 +65,16 @@ class ViewController: UIViewController {
             self.view.addSubview(view)
             let snapBehavior = UISnapBehavior(item: view, snapTo: view.center)
             snapBehavior.damping = damping
-            animator.addBehavior(snapBehavior)
+            //animator.addBehavior(snapBehavior)
             return view
         }
-
+        collision.translatesReferenceBoundsIntoBoundary = true
+        views.forEach {
+            self.collision.addItem($0)
+            self.downGravity.addItem($0)
+        }
+        animator.addBehavior(collision)
+        animator.addBehavior(downGravity)
     }
 
     deinit {
@@ -75,6 +83,7 @@ class ViewController: UIViewController {
     @objc private func pan(recognizer: UILongPressGestureRecognizer) {
         switch recognizer.state {
         case .began:
+            animator.removeBehavior(downGravity)
             let gravity = UIFieldBehavior.radialGravityField(position: recognizer.location(in: view))
             gravity.region = UIRegion(radius: radius)
             gravity.minimumRadius = minimumRadius
@@ -89,6 +98,7 @@ class ViewController: UIViewController {
             if let gravity = gravity {
                 animator.removeBehavior(gravity)
             }
+            animator.addBehavior(downGravity)
         default:
             break
         }
